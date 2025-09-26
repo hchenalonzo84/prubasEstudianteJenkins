@@ -19,29 +19,29 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PruebasEstudiante {
     
     // Campo usado por todos los tests
-    private Estudiante estudiante;
+    public Estudiante estudiante;
  
     
     @BeforeEach
-    void setUp() {
+    public void setUp() {
     estudiante = new Estudiante("Ana"); 
     }
     @Test
-    void testAgregarNotaValida() {
+    public void testAgregarNotaValida() {
         // Agregar una nota válida y verificar el promedio
         estudiante.agregarNota(80);
         assertEquals(80.0, estudiante.calcularPromedio(), 0.0001);
     }
 
     @Test
-    void testAgregarNotaInvalida() {
+    public void testAgregarNotaInvalida() {
         // Notas fuera de 0..100 deben lanzar IllegalArgumentException
         assertThrows(IllegalArgumentException.class, () -> estudiante.agregarNota(-1));
         assertThrows(IllegalArgumentException.class, () -> estudiante.agregarNota(101));
     }
 
     @Test
-    void testCalcularPromedio() {
+    public void testCalcularPromedio() {
         // Promedio de 80, 60, 70 es 70
         estudiante.agregarNota(80);
         estudiante.agregarNota(60);
@@ -50,7 +50,7 @@ public class PruebasEstudiante {
     }
 
     @Test
-    void testAprobo() {
+    public void testAprobo() {
         // Caso que APRUEBA (>= 60)
         estudiante.agregarNota(60);
         estudiante.agregarNota(60);
