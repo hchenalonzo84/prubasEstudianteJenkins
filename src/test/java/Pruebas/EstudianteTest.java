@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author rapaz
  */
-public class PruebasEstudiante {
+public class EstudianteTest {
     
     // Campo usado por todos los tests
     public Estudiante estudiante;
